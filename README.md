@@ -19,7 +19,7 @@ Frame MVP 框架适配AndroidX
           }
    * 需要在自己的app module的build.gradle中注入butterknife依赖库：
    
-          api "com.jakewharton:butterknife:10.0.0"
+          implementation "com.jakewharton:butterknife:10.0.0"
           annotationProcessor "com.jakewharton:butterknife-compiler:10.0.0"
 	     
    * 项目下的build.gradle配置
