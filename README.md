@@ -2,8 +2,8 @@
 Frame MVP 框架适配AndroidX
 ## 集成
    * [WISERFormatPlugin插件大门](https://github.com/Wiser-Wong/WISERFormatPlugin.git)
-   
    ![images](https://github.com/Wiser-Wong/WISERFormatPlugin/blob/master/images/plugin2.png)
+   * [Frame未适配AndroidX框架](https://github.com/Wiser-Wong/Frame)
    * Application中onCreate方法中初始化框架：
    
 	     WISERHelper.newBind().setWiserBind(new MyBind()).Inject(this, BuildConfig.DEBUG);  
