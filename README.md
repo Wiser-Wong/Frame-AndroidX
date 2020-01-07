@@ -28,7 +28,7 @@ Frame MVP 框架适配AndroidX
 	     
    * app目录下build.gradle配置
    
-	     dependencies { implementation 'com.github.Wiser-Wong:Frame-AndroidX:1.0.0' }
+	     dependencies { implementation 'com.github.Wiser-Wong:Frame-AndroidX:1.0.1' }
      
 ## 使用说明
  
