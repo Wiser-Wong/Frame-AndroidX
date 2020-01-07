@@ -35,7 +35,7 @@ dependencies {
     annotationProcessor "com.jakewharton:butterknife-compiler:10.0.0"
 
     //java 定义注解
-    api 'org.jetbrains:annotations-java5:15.0'
+    api 'org.jetbrains:annotations:13.0'
 
     //系统状态栏
     api 'com.readystatesoftware.systembartint:systembartint:1.0.4'
