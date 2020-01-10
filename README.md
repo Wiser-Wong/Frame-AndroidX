@@ -17,16 +17,17 @@ Frame MVP 框架适配AndroidX
                 targetCompatibility JavaVersion.VERSION_1_8
             }
           }
-   * 需要在自己的app module的build.gradle中注入butterknife依赖库：
+   * 需要在自己的app module的build.gradle中注入butterknife依赖库：  
+          
           dependencies{
-          implementation "com.jakewharton:butterknife:10.0.0"
-          annotationProcessor "com.jakewharton:butterknife-compiler:10.0.0"
+              implementation "com.jakewharton:butterknife:10.0.0"
+              annotationProcessor "com.jakewharton:butterknife-compiler:10.0.0"
           }
           或
           apply plugin: 'kotlin-kapt'
           dependencies{
-          implementation "com.jakewharton:butterknife:10.0.0"
-          kapt "com.jakewharton:butterknife-compiler:10.0.0"
+              implementation "com.jakewharton:butterknife:10.0.0"
+              kapt "com.jakewharton:butterknife-compiler:10.0.0"
           }
 	     
    * 项目下的build.gradle配置
