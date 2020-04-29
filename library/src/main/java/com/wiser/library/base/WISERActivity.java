@@ -42,6 +42,7 @@ public abstract class WISERActivity<B extends IWISERBiz> extends FragmentActivit
 
 	@Override protected void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		initCreateStart(savedInstanceState);
 		mInflater = LayoutInflater.from(this);
 		// 创建构建类
 		mWiserBuilder = new WISERBuilder(this, mInflater);
@@ -66,6 +67,8 @@ public abstract class WISERActivity<B extends IWISERBiz> extends FragmentActivit
 		// 状态栏颜色
 		mWiserBuilder.systemBarColor();
 
+		initCreateViewAfter(savedInstanceState);
+
 		// 初始化所有组件
 		ButterKnife.bind(this);
 		if (biz() != null) {
@@ -78,6 +81,14 @@ public abstract class WISERActivity<B extends IWISERBiz> extends FragmentActivit
 		// 初始化数据
 		initData(getIntent());
 		initAfterData(savedInstanceState);
+	}
+
+	public void initCreateStart(Bundle savedInstanceState){
+
+	}
+
+	public void initCreateViewAfter(Bundle savedInstanceState){
+
 	}
 
 	public void initAfterData(Bundle savedInstanceState) {

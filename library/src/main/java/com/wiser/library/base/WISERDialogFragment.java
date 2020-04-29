@@ -108,6 +108,7 @@ public abstract class WISERDialogFragment<B extends IWISERBiz> extends DialogFra
 	}
 
 	@Nullable @Override public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+		initCreateStart(savedInstanceState);
 		if (getDialog() != null) {
 			// 去除标题栏
 			getDialog().requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -126,6 +127,8 @@ public abstract class WISERDialogFragment<B extends IWISERBiz> extends DialogFra
 		View view = build(mWiserBuilder).createView();
 
 		setFragmentView(view);
+
+		initCreateViewAfter(savedInstanceState);
 
 		// 初始化所有组件
 		unbinder = ButterKnife.bind(this, view);
@@ -149,6 +152,14 @@ public abstract class WISERDialogFragment<B extends IWISERBiz> extends DialogFra
 		}
 
 		return view;
+	}
+
+	public void initCreateStart(Bundle savedInstanceState){
+
+	}
+
+	public void initCreateViewAfter(Bundle savedInstanceState){
+
 	}
 
 	public void initAfterData(Bundle savedInstanceState) {
