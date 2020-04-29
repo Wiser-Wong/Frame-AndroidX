@@ -13,7 +13,7 @@ public interface IWISERPermissionManage {
 
 	/**
 	 * 请求权限
-	 * 
+	 *
 	 * @param activity
 	 * @param request
 	 * @param permission
@@ -23,7 +23,17 @@ public interface IWISERPermissionManage {
 
 	/**
 	 * 请求权限
-	 * 
+	 *
+	 * @param activity
+	 * @param request
+	 * @param permissions
+	 * @param ikmPermissionCallBack
+	 */
+	void requestPermissions(Activity activity, int request, String[] permissions, IWISERPermissionCallBack ikmPermissionCallBack);
+
+	/**
+	 * 请求权限
+	 *
 	 * @param fragment
 	 * @param request
 	 * @param permission
@@ -31,6 +41,15 @@ public interface IWISERPermissionManage {
 	 */
 	void requestPermission(Fragment fragment, int request, String permission, IWISERPermissionCallBack ikmPermissionCallBack);
 
+	/**
+	 * 请求权限
+	 *
+	 * @param fragment
+	 * @param request
+	 * @param permissions
+	 * @param ikmPermissionCallBack
+	 */
+	void requestPermissions(Fragment fragment, int request, String[] permissions, IWISERPermissionCallBack ikmPermissionCallBack);
 	/**
 	 * 获取权限成功
 	 */

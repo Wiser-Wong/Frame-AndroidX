@@ -1,9 +1,5 @@
 package com.wiser.library.util;
 
-import android.annotation.SuppressLint;
-
-import org.apache.commons.lang3.StringUtils;
-
 import java.text.ParseException;
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
@@ -12,15 +8,19 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
+import org.apache.commons.lang3.StringUtils;
+
+import android.annotation.SuppressLint;
+
 /**
  * @author Wiser
- * 
+ *
  *         日期
  */
 @SuppressLint("SimpleDateFormat")
 public class WISERDate {
 
-	private static final TimeZone timezone	= TimeZone.getTimeZone("GMT+8:00");
+	private static final TimeZone	timezone	= TimeZone.getTimeZone("GMT+8:00");
 
 	public static final int			DATE_XG		= 1;								// yyyy/mm/dd
 
@@ -184,7 +184,7 @@ public class WISERDate {
 
 	/**
 	 * 根据当前日期获得星期
-	 * 
+	 *
 	 * @param date
 	 *            具体日期
 	 * @param type
@@ -250,7 +250,7 @@ public class WISERDate {
 
 	/**
 	 * 获取星期几
-	 * 
+	 *
 	 * @param flag
 	 *            (true 是星期几，false是周几)
 	 * @return
@@ -337,6 +337,32 @@ public class WISERDate {
 	}
 
 	/**
+	 * 获取两个日期之间的间隔天数
+	 *
+	 * @param start
+	 *            long
+	 * @param end
+	 *            long
+	 * @return
+	 */
+	public static int daysBetweenForDate(long start, int end) {
+		long betweenDays = (end - start) / (1000 * 3600 * 24);
+		return Integer.parseInt(String.valueOf(betweenDays));
+	}
+
+	/**
+	 * 获取两个日期之间的间隔天数
+	 *
+	 * @param limit
+	 *            long 间隔的长度
+	 * @return
+	 */
+	public static int daysBetweenForDate(long limit) {
+		long betweenDays = limit / (1000 * 3600 * 24);
+		return Integer.parseInt(String.valueOf(betweenDays));
+	}
+
+	/**
 	 * 根据long类型转时间类型字符串
 	 *
 	 * @param mill
@@ -376,6 +402,29 @@ public class WISERDate {
 		}
 		return dateStr;
 	}
+
+	/**
+	 * 根据long类型获取时间字符串
+	 *
+	 * @param mill long时间
+	 * @param pattern 模板
+	 * @return
+	 */
+	public static String getTimes(long mill,String pattern) {
+		Date date = new Date(mill);
+		String dateStr = "";
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat(pattern, Locale.CHINA);
+			sdf.setTimeZone(timezone);
+			// 进行格式化
+			dateStr = sdf.format(date);
+			return dateStr;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return dateStr;
+	}
+
 
 	/**
 	 * 根据long类型转时分秒类型字符串
@@ -457,7 +506,7 @@ public class WISERDate {
 
 	/**
 	 * 日期比较
-	 * 
+	 *
 	 * @param firstTime
 	 * @param secondTime
 	 * @return true firstTime<secondTime false firstTime>secondTime
@@ -499,7 +548,7 @@ public class WISERDate {
 
 	/**
 	 * 得到现在小时
-	 * 
+	 *
 	 * @return
 	 */
 	public static String getCurrentHour() {
